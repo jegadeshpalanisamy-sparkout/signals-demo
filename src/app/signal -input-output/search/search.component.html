@@ -1,0 +1,16 @@
+<div class="search-container">
+    <h2>Search Bikes</h2>
+    @if(selectedBike){  
+        <h2>
+            selected bike:{{selectedBike.name}}
+        </h2>
+    }
+    <input
+      type="text"
+      placeholder="Search bikes..."
+      [(ngModel)]="searchTerm"
+    />
+  </div>
+  
+  <!-- pass searchTerm to child -->
+  <app-bike [filter]="searchTerm" (onBikeClickEmitter)="selectedBikes($event)"></app-bike>

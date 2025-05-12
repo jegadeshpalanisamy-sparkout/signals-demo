@@ -1,0 +1,14 @@
+<div class="results">
+    @if(filteredBikes.length === 0){
+    <div class="no-results">
+      No bikes found.
+    </div>
+}
+@for (bike of filteredBikes; track $index) {
+    <div  class="bike-card" (click) ="onBikeClicked(bike)">
+      <h3>{{ bike.name }}</h3>
+      <p><strong>Model:</strong> {{ bike.model }}</p>
+      <p><strong>Price:</strong> ${{ bike.price }}</p>
+    </div>
+}
+</div>
